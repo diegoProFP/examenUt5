@@ -5,9 +5,15 @@ import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
+
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+/**
+ * @param Esta clase sirve para crear una Playlist
+ * @author Marcos Perez
+ *@version 1.5
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +23,11 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 * @param Los minutos se obtienen contabilizando el valor de los segundos
+	 * @see totalSegundos
+	 * @return {@link Double}
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +37,14 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	/**
+	 * 
+	 * @param Esto sirve para agregar una cancion nueva
+	 * @return Es un valor booleano
+	 * @throws DatosInvalidosException
+	 * @see {@link Cancion}
+	 * @version 1.0
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +67,13 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	
+	/**
+	 * 
+	 * @param Esto permite encontrar canciones por su nombre
+	 * @return encontrado
+	 * @version 1.5
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +94,13 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	
+	/**
+	 * 
+	 * @param nombreCancion
+	 * @return encontrado
+	 * @deprecated encontrarCancion, es mejor usar encontrar CancionPorNombre
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
