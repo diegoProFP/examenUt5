@@ -8,6 +8,11 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+
+/**
+ *almacena una lista de canciones con sus respectivos nombres y los segundos de duracion de cada uno *@author Jorgemartin107
+ *@since la version 1.5
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +22,10 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 * Este metodo pasa los segundos totales de las canciones a minutos
+	 * @return la duracion de la cancion en minutos
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +35,13 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	
+	/**
+	 * @param nueva - es un objeto de tipo cancion que va a ser añadida
+	 * @return - si la cancion se ha añadido con exito
+	 * @throws DatosInvalidosException
+	 * @since la version 1.0
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +64,13 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	
+	/**
+	 * Este metedo se encarga de buscar una cancion dentro de la playlist mediante su nombre
+	 * @param nombre - hace referencia al nombre de una cancion
+	 * @return el metodo devuelve si la cancion ha sido encontrada
+	 * @since version 1.5
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +91,13 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	
+	/**
+	 * metedo que se encarga de  buscar una cancion en la playlist
+	 * @deprecated mejor utilizar este {@link #encontrarCancionPorNombre(String)}
+	 * @param nombreCancion - es el nombre de la cancion de que buscas
+	 * @return si has encontrado la cancion que se buscaba
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
