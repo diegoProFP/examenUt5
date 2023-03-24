@@ -8,6 +8,11 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+/**
+ * Clase que crea una Playlist y las operaciones que se pueden hacer sobre ella.
+ * @author ggarciacarballo
+ * @version 1.5
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +22,11 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 * Divide el total de segundos entre 60. 
+	 * Realiza la operación desde el atributo totalSegundos.
+	 * @return La duración total en segundos de la Playlist.
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +36,16 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	/**
+	 * Método para agregar una canción a la playlist.
+	 * @param nueva La nueva cancion a agregar en la playlist
+	 * @return Devuelve true si la canción ha sido agregada correctamente y false en caso contrario.
+	 * @throws DatosInvalidosException Si la canción o el nombre está vacío lanza una excepción.
+	 * @since 1.0
+	 * @see Cancion
+	 * @see DatosInvalidosException
+	 * 
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +68,12 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	/**
+	 * Método para encontrar una canción introduciendo su nombre y buscándolo en la Playlist.
+	 * @param nombre Titulo de la canción que se desea buscar.
+	 * @return Devuelve true si se ha encontrado la canción y false en caso contrario.
+	 * @since 1.5
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +94,13 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	/**
+	 * Método que busca una canción por nombre dentro de una Playlist.
+	 * @deprecated No usar, utilizar mejor {@link #encontrarCancionPorNombre(String)}
+	 * @param nombreCancion El título de la canción que se desea buscar.
+	 * @return Devuelve true si se ha encontrado la canción y false en caso contrario.
+	 * @since 1.0
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
