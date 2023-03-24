@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"spotify.juan.aparicio5","l":"Artista"},{"p":"spotify.juan.aparicio5","l":"Cancion"},{"p":"spotify.juan.aparicio5","l":"Playlist"}];updateSearchResults();

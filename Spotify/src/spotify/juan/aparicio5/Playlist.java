@@ -4,28 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
+/**
+ * Esta clase es la Playlist de Spotify
+ * @author juan.aparicio5
+ * @version 1.5
+ *
+ */
 
-//Poner comentario de la clase, con la descripción de qué es lo que hace  
-//De autor poned vuestro email de educaMadrid. 
-//La version de la clase es la 1.5
 public class Playlist {
 
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
 
-	
+/**
+ * Este método controla la duración de las playlist
+ * @return Total de tiempo que dura la playlist
+ */
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
 		
+	/**
+	 * Nos devuelve V o F , es decir , si tuvo exito agregar una nueva canción.
+	 * @param nueva -Nueva canción.
+	 * @return V o F si se agrega nueva canción.
+	 * @throws DatosInvalidosException
+	 * @since 1.0
+	 */
 		
-		
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
-	// referenciar tanto a las clases Cancion y DatosInvalidosException
-	//Existe desde la version 1.0
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -44,10 +53,12 @@ public class Playlist {
 		return exito;
 	}
 
-
-	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
+/**
+ * Nos devuelve V o F dependiendo de si encontro una nueva canción para añadir.
+ * @param nombre -Nuevo nombre
+ * @return V o F dependiendo de si encuentra nueva canción.
+ * @since 1.5
+ */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -64,7 +75,13 @@ public class Playlist {
 
 		return encontrado;
 	}
-	
+	/**
+	 * Nos devuelve V o F dependiendo de si encontro una nueva canción para añadir.
+	 * @param nombreCancion -Nueva canción.
+	 * @return  V o F dependiendo de si encuentra nueva canción.
+	 * @deprecated Mejor usar {@link #encontrarCancion(String)}
+	 * @since 1.0
+	 */
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
