@@ -1,13 +1,20 @@
 package spotify.daniel.serranoreal;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+import javax.swing.text.html.HTMLEditorKit.LinkController;
 
 import spotify.exception.DatosInvalidosException;
 
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+
+/**La clase gestiona una playlist de spotify
+ * @author daniel.serranoreal@educa.madrid.org
+ * @version 1.5*/
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +24,10 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	
+	/**El método obtiene la duración de una canción en minutos diviendo los segundos entre 60
+	 * @param total de segundos
+	 * @return devuelve el valor en minutos*/
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +37,12 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	
+	/**Agrega una canción nueva a la playlist dando feedback sobre si pudo agregarla o se envió un elemento null
+	 * @param objeto canción @see Cancion
+	 * @return exito
+	 * @exception {@link DatosInvalidosException} 
+	 * @since 1.0*/
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -46,8 +63,13 @@ public class Playlist {
 
 
 	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
+	// Poner descripcion, parametros de entrada, valor de retorno.
 	//Existe desde la version 1.5
+	
+	/**Busca canciones por nombre
+	 * @param el nombre de la cancion en string
+	 * @return encontrado true/false
+	 * @since 1.5*/
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +90,9 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	
+	/**@since 1.0
+	 * @deprecated Lo sustituye {@link #encontrarCancionPorNombre(String)}*/
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
