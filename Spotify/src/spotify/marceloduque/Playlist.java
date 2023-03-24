@@ -8,6 +8,12 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+/**
+ * La clase Playlist funcionara a modo de playlist de canciones de modo que se podra ver el tiempo de duracion de la playlist 
+ * añadir una canción o encontrar una canción por el nombre.
+ * @author marcelo.duque@educa.madrid.org
+ *@version 1.5
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +23,11 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 * En el metodo obtenerDuracionTotal() lo que se hace es pasarle un valor entero a dividir entre 60 para ver la duración de la playlist
+	 * por la posibilidad de valores decimales se añadira un double
+	 * @return double totalSegundos en esta clase devolvera el valor en double dado que la division que se realiza puede dar valores decimales.
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +37,14 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	/**
+	 * En la Clase agregarCancion enviamos un objeto Cancion que lo que hara es añadir este objeto a un Arraylist de canciones si no esta creado el Arraylist
+	 * se creara, de modo que tambien hay un control de error en caso que la cancion o el nombre de la cancion sea nulo.
+	 * @param nueva Se enviara el objeto Cancion para la adiccion de este a un Arraylist
+	 * @return exito Devolvera un boolean de true o false para indicar si ha sido posible añadir la cancion
+	 * @since 1.0 Existe desde la version 1.0
+	 * @throws DatosInvalidosException
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +67,12 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	/**
+	 * En este metodo se enviara un String con el fin de compararlo con los nombres de las canciones que ya estan en el Arraylist de canciones
+	 * en caso de que el String coincida se envia un boolean true y en caso contrario un boolean false
+	 * @param nombre el parametro nombre se usara para buscarlo en el Arraylist de canciones
+	 * @return encontrado Este boolean se devuelve para indicar si ha sido posible encontrar la cancion o no
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +93,13 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	/**
+	 * En el metodo encontrarCancion se usaba para buscar cancion con un String y hacia un equals entre un objeto cancion del arraylist y el objeto cancion
+	 * @deprecated Este metodo esta obsoleto dado que se ha hecho uno mejor:  {@link #encontrarCancionPorNombre(String nombre)}
+	 * @param nombreCancion Este String se usaba para compararlo con las canciones dentro del Arraylist
+	 * @return encontrado se devolvera 
+	 * @since 1.0
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
