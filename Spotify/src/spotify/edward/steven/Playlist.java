@@ -1,28 +1,45 @@
 package spotify.edward.steven;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import spotify.base.Cancion;
 import spotify.exception.DatosInvalidosException;
 
+
+// 
+/**
+ * The Class Playlist.
+ * @author edward.castro
+ */
 public class Playlist {
+	
+	/** el nombre. */
 	private String nombre;
+	
+	/** total segundos. */
 	private int totalSegundos;
+	
+	/** lista canciones. */
 	private List<Cancion> canciones;
 
 	
-	// Poner descripcion, valor de retorno.
-	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 *  Con este metodo obtenemos la  duracion total.
+	 *
+	 * @return nos devuelve un  double que es el total de segundo de dicha cancion
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
 		
 		
 		
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
-	// referenciar tanto a las clases Cancion y DatosInvalidosException
-	//Existe desde la version 1.0
+	/**
+	 * con este metodo podemos agrgar una cacion apartir de un public boolean y comprobamos si existe o no n
+	 *
+	 * @param nueva 
+	 * @return true, exito 
+	 * @throws DatosInvalidosException the datos invalidos exception la cancion o su nombre es vacia 
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -43,15 +60,18 @@ public class Playlist {
 
 
 	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
+	/**
+	 * Encontrar cancion por nombre en caso de ser true sera exitoso.
+	 *@version 1.5
+	 * @param nombre introducir nombre 
+	 * @return true, encontrado
+	 * 
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
 		while (!encontrado && contador < canciones.size()) {
 
-			// Si el nombre de la cancion obtenida en cada vuelta es igual a la que se
-			// quiere
 			if (canciones.get(contador).getNombre().equalsIgnoreCase(nombre)) {
 				encontrado = true;
 			}
@@ -62,9 +82,14 @@ public class Playlist {
 		return encontrado;
 	}
 	
-	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
-	// encontrarCancionPorNombre(String nombre)
-	//Existe desde la version 1.0
+	/**
+	 * Este metodo se usa paara encontrar una cancion a partir de un String nimbreCancion
+	 *
+	 * @param nombreCancion el nombre de la  cancion
+	 * @return true, encontrado
+	 * @version 1.0
+	 * @deprecated 
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
@@ -82,26 +107,32 @@ public class Playlist {
 	
 
 
+
 	public String getNombre() {
 		return nombre;
 	}
 
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
+	
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
 
+	
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
 
+	
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
 
+	
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}
