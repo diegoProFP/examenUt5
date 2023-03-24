@@ -40,7 +40,7 @@ public class Playlist {
 	 * @return mensaje de exito de que se ha agregado la cancion a la playlist correctamente
 	 * @throws DatosInvalidosException
 	 * @version 1.0
-	 * @see Cancion
+	 * @see Cancion nueva
 	 */
 		
 		
@@ -67,8 +67,9 @@ public class Playlist {
 	
 	/**
 	 * 
-	 * @param nombre
-	 * @return
+	 * @param Busca las canciones por el nombre
+	 * @return Encuentra la cancion
+	 * @version 1.5
 	 */
 
 	
@@ -90,6 +91,13 @@ public class Playlist {
 
 		return encontrado;
 	}
+	
+	/**
+	 * @deprecated usar encontrarCancionPorNombre(String nombre)
+	 * @param Busca las canciones por el nombre
+	 * @return Encuentra la cancion
+	 * @version 1.0
+	 */
 	
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
