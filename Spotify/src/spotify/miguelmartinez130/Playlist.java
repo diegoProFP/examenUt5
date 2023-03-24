@@ -8,6 +8,11 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+/**
+ * Esta clase se encarga de crear una forma de guardar canciones 
+ * @author miguel.martinez130
+ *@version 1.5
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +22,10 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	/**
+	 * metodo que se encarga de obtener los minutos de cada cancion dividiendo el total de segundos entre 60
+	 * @return - este metodo retorna un double que representa los minutos
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +35,14 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	/**
+	 * metodo que permite agregar una cancion
+	 * @param nueva - objeto cancion que va a agregarse 
+	 * @return - retorna un booleano en base a si se ha conseguido agregar o no la cancion
+	 * @throws DatosInvalidosException
+	 * @since 1.0
+	 * 
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +65,12 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	/**
+	 * metodo que permite buscar canciones introduciendo un nombre
+	 * @param nombre - String que hace referencia a la cancion qe se desea ser buscada
+	 * @return - retorna un booleano en base a si fue encontrada o no la cancion
+	 * @since 1.5
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +91,11 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	/**
+	 * @deprecated
+	 * @see #encontrarCancionPorNombre(String)
+	 * @since 1.0
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
