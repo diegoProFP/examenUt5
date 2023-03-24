@@ -39,7 +39,7 @@ public class Playlist {
 	 * @param Agrega una cancion nueva a la playlist y si no existe se agregue con un mensaje de exito
 	 * @return mensaje de exito de que se ha agregado la cancion a la playlist correctamente
 	 * @throws DatosInvalidosException
-	 * @version 1.0
+	 * @since 1.0
 	 * @see Cancion nueva
 	 */
 		
@@ -69,7 +69,7 @@ public class Playlist {
 	 * 
 	 * @param Busca las canciones por el nombre
 	 * @return Encuentra la cancion
-	 * @version 1.5
+	 * @since 1.5
 	 */
 
 	
@@ -96,7 +96,7 @@ public class Playlist {
 	 * @deprecated usar encontrarCancionPorNombre(String nombre)
 	 * @param Busca las canciones por el nombre
 	 * @return Encuentra la cancion
-	 * @version 1.0
+	 * @since 1.0
 	 */
 	
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
