@@ -20,6 +20,12 @@ public class Playlist {
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
+	
+	/**
+	 * 
+	 * @param Obtiene la duracion total en segundos
+	 * @return la cantidad de segundos total
+	 */
 
 	
 	// Poner descripcion, valor de retorno.
@@ -27,7 +33,15 @@ public class Playlist {
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
-		
+	
+	/**
+	 * 
+	 * @param Agrega una cancion nueva a la playlist y si no existe se agregue con un mensaje de exito
+	 * @return mensaje de exito de que se ha agregado la cancion a la playlist correctamente
+	 * @throws DatosInvalidosException
+	 * @version 1.0
+	 * @see Cancion
+	 */
 		
 		
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
@@ -50,7 +64,12 @@ public class Playlist {
 
 		return exito;
 	}
-
+	
+	/**
+	 * 
+	 * @param nombre
+	 * @return
+	 */
 
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
