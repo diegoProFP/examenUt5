@@ -1,5 +1,13 @@
 package spotify.mohamed.azougagh1;
-
+/**
+ * 
+ * clase playlist
+ * 
+ * @author Mohamed
+ * 
+ * @version 1.0
+ * 
+ */
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +16,18 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+
+/**
+ * 
+ * clase playlist, lo que hace este codigo es pedirte el nombre, el total de segundos y la lista de canciones y se obtiene la duracion total en segundos.
+ * 
+ * 
+ * 
+ * @author Mohamed
+ * 
+ * @version 1.0
+ * 
+ */
 public class Playlist {
 
 	private String nombre;
@@ -17,6 +37,11 @@ public class Playlist {
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
+	
+	/**
+	 * 
+	 * @return es el total de segundos entre 60 
+	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
@@ -26,6 +51,13 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
+	/**
+	 * 
+	 * @param nueva si el exito es falso ademas de que la cancion es nula se creera una arraylist nueva de canciones.
+	 * si el exito es falso ademas y nueva es nulo saltara un syso diciendo que la cancion esta vacia o su nombre esta vacio.
+	 * @return dara exito si las demas condiciones son correctas para que de el resultado
+	 * @throws DatosInvalidosException referencia aquellas canciones que son nulas y el exito sea falso booleanamente
+	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -48,6 +80,11 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	/**
+	 * 
+	 * @param nombre si el nombre es encontrado se inicializara un contador 
+	 * @return
+	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -68,6 +105,11 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	/**
+	 * 
+	 * @param nombreCancion si se encuentra el nombre de la cancion se iniciara un bucle inicializado por for 
+	 * @return dara el resultado de la cancion encontrada
+	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
@@ -142,6 +184,7 @@ public class Playlist {
 //
 //		return exito;
 //	}
+	
 	
 	
 
