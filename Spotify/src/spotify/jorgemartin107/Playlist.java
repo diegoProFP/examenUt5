@@ -10,8 +10,9 @@ import spotify.exception.DatosInvalidosException;
 //La version de la clase es la 1.5
 
 /**
- *almacena una lista de canciones con sus respectivos nombres y los segundos de duracion de cada uno *@author Jorgemartin107
- *@since la version 1.5
+ * Almacena una lista de canciones con sus respectivos nombres y los segundos de duracion de cada uno 
+ * @author Jorgemartin107
+ * @since la version 1.5
  */
 public class Playlist {
 
