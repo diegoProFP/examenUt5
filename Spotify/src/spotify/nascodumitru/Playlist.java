@@ -5,6 +5,11 @@ import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
+/**
+ * 
+ * @author dumitrunasco
+ *
+ */
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
@@ -14,7 +19,10 @@ public class Playlist {
 	private int totalSegundos;
 	private List<Cancion> canciones;
 
-	
+	/**
+	 * 
+	 * @return
+	 */
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	public double obtenerDuracionTotal() {
