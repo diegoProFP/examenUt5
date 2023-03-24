@@ -5,6 +5,13 @@ import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
+
+	/**
+	 * Administra la playlist y tiene opciones como "agregar cancion", "obtener duracion", "encontrar una cancion" y "encontrar una cancion por nombre
+	 * 
+	 * @author yustealvarez.daniel@gmail.com
+	 * @version 1.5
+	 */
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
@@ -15,6 +22,12 @@ public class Playlist {
 	private List<Cancion> canciones;
 
 	
+	
+	/**
+	 * Calcula la duracion de la cancion en base a los segundos totales dividiendo los
+	 * segundos totales entre 60
+	 * 
+	 * @return La duracion de la canción en minutos y segundos*/
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	public double obtenerDuracionTotal() {
@@ -22,7 +35,17 @@ public class Playlist {
 	}
 		
 		
-		
+	/**
+	 * Selecciona una cancion y la añade a la playlist
+	 * 
+	 * @param nueva de tipo Cancion para agregarla a la playlist
+	 * @see spotify.yustealvarezdaniel.Cancion
+	 * 
+	 * @see DatosInvalidosException
+	 * 
+	 * @since 1.0
+	 * 
+	 * */
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
@@ -45,7 +68,13 @@ public class Playlist {
 	}
 
 
-	
+	/**
+	 * Pasandole el nombre de una cancion, encuentra esta misma
+	 * 
+	 * @param nombre El nombre de la cancion
+	 * @return Devuelve si ha encontrado el nombre de la cancion introducida
+	 * 
+	 * @since 1.5*/
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
 	public boolean encontrarCancionPorNombre(String nombre) {
@@ -65,6 +94,11 @@ public class Playlist {
 		return encontrado;
 	}
 	
+	
+	/**
+	 * @deprecated
+	 * @see #encontrarCancionPorNombre(String)
+	 * @since 1.0*/
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
