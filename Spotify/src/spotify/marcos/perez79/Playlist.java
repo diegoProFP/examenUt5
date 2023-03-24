@@ -70,7 +70,7 @@ public class Playlist {
 	
 	/**
 	 * 
-	 * @param Esto permite encontrar canciones por su nombre
+	 * @param encotrarCancionPorNombre Esto permite encontrar canciones por su nombre
 	 * @return encontrado
 	 * @version 1.5
 	 */
@@ -97,9 +97,9 @@ public class Playlist {
 	
 	/**
 	 * 
-	 * @param nombreCancion
+	 * @param nombreCancion Sirve para que cuando buscas el nombre de la cancion te salga
 	 * @return encontrado
-	 * @deprecated encontrarCancion, es mejor usar encontrar CancionPorNombre
+	 * @deprecated encontrarCancion esta obsoleto, es mejor usar encontrar CancionPorNombre
 	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
