@@ -5,6 +5,13 @@ import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
+/**
+ * @author ismail.igalla
+ * @version 1.5
+ * @param Muestra el nombre de la playlist, la duracion total en segundos, y todas las canciones
+ * 
+ */
+
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
