@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"spotify.base"},{"l":"spotify.diegodi1"},{"l":"spotify.exception"},{"l":"spotify.marcos.perez79"}];updateSearchResults();

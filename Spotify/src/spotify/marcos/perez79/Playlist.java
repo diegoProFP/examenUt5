@@ -24,7 +24,7 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @param Los minutos se obtienen contabilizando el valor de los segundos
+	 * @param obtenerDuracionTotalLos minutos se obtienen contabilizando el valor de los segundos
 	 * @see totalSegundos
 	 * @return {@link Double}
 	 */
@@ -39,7 +39,7 @@ public class Playlist {
 	//Existe desde la version 1.0
 	/**
 	 * 
-	 * @param Esto sirve para agregar una cancion nueva
+	 * @param agregarCancion Esto sirve para agregar una cancion nueva
 	 * @return Es un valor booleano
 	 * @throws DatosInvalidosException
 	 * @see {@link Cancion}
