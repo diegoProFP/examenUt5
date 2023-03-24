@@ -2,7 +2,6 @@ package spotify.miguelmunoz38;
 
 import java.util.Objects;
 
-
 public class Cancion {
 
     private String nombre;
