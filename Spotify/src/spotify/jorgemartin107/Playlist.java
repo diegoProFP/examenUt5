@@ -38,6 +38,7 @@ public class Playlist {
 	//Existe desde la version 1.0
 	
 	/**
+	 * Consiste en agregar una nueva cancion a la playlist
 	 * @param nueva - es un objeto de tipo cancion que va a ser añadida
 	 * @return - si la cancion se ha añadido con exito
 	 * @throws DatosInvalidosException
@@ -94,7 +95,7 @@ public class Playlist {
 	//Existe desde la version 1.0
 	
 	/**
-	 * metedo que se encarga de  buscar una cancion en la playlist
+	 * Este metedo que se encarga de  buscar una cancion en la playlist
 	 * @deprecated mejor utilizar este {@link #encontrarCancionPorNombre(String)}
 	 * @param nombreCancion - es el nombre de la cancion de que buscas
 	 * @return si has encontrado la cancion que se buscaba
