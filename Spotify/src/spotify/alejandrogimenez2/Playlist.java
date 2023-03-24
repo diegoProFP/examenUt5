@@ -64,8 +64,6 @@ public class Playlist {
 	 * @return si encuentra dicha cancion o no
 	 * @since 1.5
 	 */
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -84,13 +82,13 @@ public class Playlist {
 	}
 	
 	/**
-	 * @deprecated
+	 * @deprecated usar mejor otro metodo, este está anticuado 
 	 * @param nombreCancion
 	 * @return si la cancion ha sido o no encontrada
+	 * @since 1.0
+	 * @see encontrarCancionPorNombre{@link encontrarCancionPorNombre}
 	 */
-	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
-	// encontrarCancionPorNombre(String nombre)
-	//Existe desde la version 1.0
+
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
