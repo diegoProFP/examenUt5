@@ -60,7 +60,7 @@ public class Playlist {
 	/**
 	 * Funcion que busca el nombre de la cancion dentro de la playlist, recibiendo una respuesta de si es encontrada o no.
 	 * 
-	 * @param nombre
+	 * @param nombre nombre de la cancion que se busca
 	 * @return si encuentra dicha cancion o no
 	 * @since 1.5
 	 */
@@ -83,10 +83,10 @@ public class Playlist {
 	
 	/**
 	 * @deprecated usar mejor otro metodo, este está anticuado 
-	 * @param nombreCancion
+	 * @param nombreCancion nombre nombre de la cancion que se busca
 	 * @return si la cancion ha sido o no encontrada
 	 * @since 1.0
-	 * @see encontrarCancionPorNombre{@link encontrarCancionPorNombre}
+	 * @see encontrarCancionPorNombre {@link encontrarCancionPorNombre}
 	 */
 
 	public boolean encontrarCancion(String nombreCancion) {
