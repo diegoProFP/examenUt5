@@ -1,4 +1,4 @@
-package spotify.base;
+package spotify.Fbendezu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,11 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+
 /**
- * @version 1.0
+ * 
  * @author alumno
- *
+ *@version 1.0
  */
 public class Playlist {
 
@@ -23,7 +24,7 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
+	 * 
 	 * @return
 	 */
 	public double obtenerDuracionTotal() {
@@ -64,7 +65,7 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
 	/**
-	 * @version 1.0
+	 * @vesion 1.0
 	 * @param nombre
 	 * @return
 	 */
@@ -89,7 +90,7 @@ public class Playlist {
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
 	/**
-	 * @version 1.0
+	 * 
 	 * @param nombreCancion
 	 * @return
 	 */
@@ -110,7 +111,7 @@ public class Playlist {
 	
 
 /**
- * @ version 1.0
+ * 
  * @return
  */
 	public String getNombre() {
