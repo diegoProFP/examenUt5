@@ -1,9 +1,5 @@
-package spotify.base;
-/**
- * 
- * @author miguel.munoz38
- *
- */
+package spotify.miguelmunoz38;
+
 public class Artista {
 
     private String nombre;
