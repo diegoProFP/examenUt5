@@ -1,17 +1,15 @@
-package spotify.base;
+package spotify.alejandrogimenez2;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
-//Poner comentario de la clase, con la descripción de qué es lo que hace  
-//De autor poned vuestro email de educaMadrid. 
-//La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
- *
+ * Clase que maneja todas las funciones de la playlist, con esta podremos obtener info de nuestra playlist, agregar y buscar
+ * canciones tan por nombre como buscar en general.
+ * @author alejandro.gimenez2@educa.madrid.org
+ * @version 1.5
  */
 public class Playlist {
 
@@ -20,29 +18,25 @@ public class Playlist {
 	private List<Cancion> canciones;
 
 	
-	// Poner descripcion, valor de retorno.
-	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
-	 * @return
+	 * Recibimos la duracion total que se obtiene con todas las canciones que han sido añadidas a nuestra playlist
+	 * Esto se obtiene ya que usamos el total de segundo de la cancion y lo dividimos entre 60 para obtener dicha duración
+	 * 
+	 * @return numero total de duracion de la playlist
 	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
 		
 		
-		
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
-	// referenciar tanto a las clases Cancion y DatosInvalidosException
-	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
-	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
-	 * @see Cancion
-	 * @see DatosInvalidosException
+	 * Con esta función agregamos una cancion a nuestra playlist, comprobando si el nombre de cancion buscado existe
+	 * si esta existe se introduce a la playlist, si no, lanza un error.	
+	 * 
+	 * @param nueva refiriendose a la cancion que se añade 
+	 * @return devuelve si ha sido exitosa la accion de agragar una cancion a la playlist
+	 * @throws DatosInvalidosException
+	 * @since 1.0
 	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
@@ -63,15 +57,12 @@ public class Playlist {
 	}
 
 
-	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
-	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
+	 * Funcion que busca el nombre de la cancion dentro de la playlist, recibiendo una respuesta de si es encontrada o no.
 	 * 
+	 * @param nombre nombre de la cancion que se busca
+	 * @return si encuentra dicha cancion o no
+	 * @since 1.5
 	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
@@ -90,14 +81,14 @@ public class Playlist {
 		return encontrado;
 	}
 	
-	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
-	// encontrarCancionPorNombre(String nombre)
-	//Existe desde la version 1.0
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * @deprecated usar mejor otro metodo, este está anticuado 
+	 * @param nombreCancion nombre nombre de la cancion que se busca
+	 * @return si la cancion ha sido o no encontrada
+	 * @since 1.0
+	 * @see encontrarCancionPorNombre {@link encontrarCancionPorNombre}
 	 */
+
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
@@ -114,45 +105,27 @@ public class Playlist {
 
 	
 
-/**
- * @ version 1.0
- * @return
- */
+
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}

@@ -1,17 +1,18 @@
-package spotify.base;
+package spotify.marcos.perez79;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
+
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
- *
+ * @param Esta clase sirve para crear una Playlist
+ * @author Marcos Perez
+ *@version 1.5
  */
 public class Playlist {
 
@@ -23,8 +24,9 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
-	 * @return
+	 * @param obtenerDuracionTotalLos minutos se obtienen contabilizando el valor de los segundos
+	 * @see totalSegundos
+	 * @return {@link Double}
 	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
@@ -36,13 +38,12 @@ public class Playlist {
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
-	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
-	 * @see Cancion
-	 * @see DatosInvalidosException
+	 * 
+	 * @param agregarCancion Esto sirve para agregar una cancion nueva
+	 * @return Es un valor booleano
+	 * @throws DatosInvalidosException
+	 * @see {@link Cancion}
+	 * @version 1.0
 	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
@@ -66,12 +67,12 @@ public class Playlist {
 	
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
+	
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
-	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
 	 * 
+	 * @param encotrarCancionPorNombre Esto permite encontrar canciones por su nombre
+	 * @return encontrado
+	 * @version 1.5
 	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
@@ -93,10 +94,12 @@ public class Playlist {
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
+	
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * 
+	 * @param nombreCancion Sirve para que cuando buscas el nombre de la cancion te salga
+	 * @return encontrado
+	 * @deprecated encontrarCancion esta obsoleto, es mejor usar encontrar CancionPorNombre
 	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
@@ -114,45 +117,27 @@ public class Playlist {
 
 	
 
-/**
- * @ version 1.0
- * @return
- */
+
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}

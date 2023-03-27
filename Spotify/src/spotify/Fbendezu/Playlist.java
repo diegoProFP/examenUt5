@@ -1,4 +1,4 @@
-package spotify.base;
+package spotify.Fbendezu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,11 @@ import spotify.exception.DatosInvalidosException;
 //Poner comentario de la clase, con la descripción de qué es lo que hace  
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
+
 /**
- * @version 1.0
+ * 
  * @author alumno
- *
+ *@version 1.0
  */
 public class Playlist {
 
@@ -23,7 +24,7 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
+	 * 
 	 * @return
 	 */
 	public double obtenerDuracionTotal() {
@@ -36,13 +37,10 @@ public class Playlist {
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
+	 * @version 1.0
 	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
-	 * @see Cancion
-	 * @see DatosInvalidosException
+	 * @return
+	 * @throws DatosInvalidosException
 	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
@@ -67,11 +65,9 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
+	 * @vesion 1.0
 	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
-	 * 
+	 * @return
 	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
@@ -94,9 +90,9 @@ public class Playlist {
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * 
+	 * @param nombreCancion
+	 * @return
 	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
@@ -115,7 +111,7 @@ public class Playlist {
 	
 
 /**
- * @ version 1.0
+ * 
  * @return
  */
 	public String getNombre() {

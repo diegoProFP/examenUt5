@@ -1,4 +1,4 @@
-package spotify.base;
+package spotify.tingmei;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,18 @@ import spotify.exception.DatosInvalidosException;
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
+ * Class Playlist.
+ * Representa las canciones que tiene dentro y el segundo que tiene la canción
+ * 
+ * @author tingmeihuang
+ * @version 1.5
  *
  */
 public class Playlist {
 
+	/**
+	 * Constantes de Playlist
+	 */
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
@@ -23,8 +29,8 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
-	 * @return
+	 * Método para obtener el minuto de la duración total de una canción a partir totalSegundos de la canción
+	 * @return totalSegundos totalSegundos de una canciñon y se lo convierte en minutos. 
 	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
@@ -36,13 +42,13 @@ public class Playlist {
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
-	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
+	 * Método para comprobar si ha podido agragar una canción nueva en la lista de  canciones del Playlist
+	 *  
+	 * @param nueva la nueva canción que quisiera añadir a la lista de  canciones del Playlist
+	 * @return false , una lista de la canción nueva, si la lista de la canción estaba vacío ó la canción que quiere añadir es nulo , o bien el nombre de la canción es nulo ; true , cuando se encuentra el nombre de la canción nueva , y añadirá esa nueva canción a la lista de la canción.
 	 * @see Cancion
-	 * @see DatosInvalidosException
+	 * @throws DatosInvalidosException si la canción nueva que se ha pasado es vacío o su nombre es vacía.
+	 * @since 1.0
 	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
@@ -67,11 +73,11 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
-	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
+	 * Método para comprobar si se encuentra la canción con su nombre existe en la lista de canciones del Playlist 
 	 * 
+	 * @param nombre el nombre de la canción que quiere buscar en la lista de canciones en el Playlist
+	 * @return true , se encuentra la canción en la lista de canciones en el Playlist ; false, no se encuentra la canción en la lista de canciones en el Playlist
+	 * @since 1.5
 	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
@@ -94,9 +100,12 @@ public class Playlist {
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * Método para comprobar si se encuentra la canción con su nombre en la lista de canciones del Playlist 
+	 *
+	 * @param nombreCancion el nombre de la canción que quiere buscar en la lista de canciones en el Playlist
+	 * @return true , se encuentra la canción en la lista de canciones en el Playlist ; false, no se encuentra la canción en la lista de canciones en el Playlist
+	 * @deprecated NO USAR MÁS , MEJOR usar {@link #encontrarCancionPorNombre(String)}
+	 * @since 1.0
 	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
@@ -112,50 +121,66 @@ public class Playlist {
 		return encontrado;
 	}
 
-	
 
-/**
- * @ version 1.0
- * @return
- */
+
+	/**
+	 * @return the nombre
+	 */
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
+
+
+	/**
+	 * @param nombre the nombre to set
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
+
+
+	/**
+	 * @return the totalSegundos
+	 */
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
+
+
+	/**
+	 * @param totalSegundos the totalSegundos to set
+	 */
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
+
+
+	/**
+	 * @return the canciones
+	 */
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
+
+
+	/**
+	 * @param canciones the canciones to set
+	 */
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}
+
+
+
+	
+
+
+
 
 	//////////////////////  METODOS PRIVADOS ////////////////////////////
 

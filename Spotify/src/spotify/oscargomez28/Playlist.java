@@ -1,51 +1,52 @@
-package spotify.base;
+package spotify.oscargomez28;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
-
-//Poner comentario de la clase, con la descripción de qué es lo que hace  
-//De autor poned vuestro email de educaMadrid. 
-//La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
+ * 
+ * @author oscar.gomez28@educamadrid.org
+ *
+ *@version 1.5   24/03/23
+ */
+
+
+/**
+ * La clase Spotify podrá obtener la duracion total de una canción,agregarla, y encontrarla por nombre o sin nombre
  *
  */
 public class Playlist {
-
+/**
+ * @param nombre  almacena el nombre de la cancion mediante el tipo de dato String
+ * @param totalSegundos se almacena mediante un Integer y sirve para saber los segundos que dura la cancion
+ * @param canciones es una lista que almacena un grupo de canciones
+ */
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
 
 	
-	// Poner descripcion, valor de retorno.
-	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
-	/**
-	 * @version 1.0
-	 * @return
-	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
+		/**
+		 * Para la obtención de los minutos , se obtienen los segundos totales y se dividen entre 60.
+		 * @return retorna un valor double ,que serían los minutos totales que dura la canción
+		 * @throws DatosInvalidosException
+		 */
 		
 		
-		
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
-	// referenciar tanto a las clases Cancion y DatosInvalidosException
-	//Existe desde la version 1.0
-	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
-	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
-	 * @see Cancion
-	 * @see DatosInvalidosException
-	 */
+	
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
-
+		/**
+		 * El objetivo de esta clase es agregar canciones, esto lo hace mediante la introduccion del usuario de una cancion
+		 * Si canciones = null , es decir que no tiene valor el nombre , no se añadirá a la lista canciones y se mostrará un mensaje de 
+		 * "La cancion o su nombre es vacía
+		 * @param el valor exito almacena si se ha añadido o no la cancion con un true o un false
+		 * @version 1.0
+		 * @throws DatosInvalidosException 
+		 */
 		boolean exito = false;
 		if (canciones == null) {
 			this.canciones = new ArrayList<>();
@@ -60,26 +61,28 @@ public class Playlist {
 		}
 
 		return exito;
+		/**
+		 * @return retorna el valor booleano exito que será true o false
+		 */
 	}
 
 
 	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
-	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
-	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
-	 * 
-	 */
+
 	public boolean encontrarCancionPorNombre(String nombre) {
+		/**
+		 * @version 1.5
+		 * 
+		 * El objetivo de esta clase es buscar una cancion por su nombre 
+		 * @param , el parametro encontrado tiene valor booleano y está igualado a false , en caso de encontrarla será true
+		 */
 		boolean encontrado = false;
 		int contador = 0;
 		while (!encontrado && contador < canciones.size()) {
-
-			// Si el nombre de la cancion obtenida en cada vuelta es igual a la que se
-			// quiere
+/**
+ * Si la cancion es igual a la que se busca ,se buscaba y el booleano se iguala a true
+ */
+	
 			if (canciones.get(contador).getNombre().equalsIgnoreCase(nombre)) {
 				encontrado = true;
 			}
@@ -88,17 +91,20 @@ public class Playlist {
 		}
 
 		return encontrado;
+		
+		/**
+		 * @return encontrado con el valor del booleano igual a true si lo ha encontrado , y false si no lo ha hecho
+		 */
 	}
 	
 	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
-	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
-	 */
 	public boolean encontrarCancion(String nombreCancion) {
+		/**
+		 * @version 1.0
+		 * @deprecated , el metodo está anticuado , a su vez se ha hecho uno mejor 
+		 */
 		boolean encontrado = false;
 
 		for (int cont = 0; cont < canciones.size(); cont++) {
@@ -114,45 +120,27 @@ public class Playlist {
 
 	
 
-/**
- * @ version 1.0
- * @return
- */
+
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}

@@ -1,4 +1,4 @@
-package spotify.base;
+package spotify.ggarciacarballo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import spotify.exception.DatosInvalidosException;
 //De autor poned vuestro email de educaMadrid. 
 //La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
- *
+ * Clase que crea una Playlist y las operaciones que se pueden hacer sobre ella.
+ * @author ggarciacarballo
+ * @version 1.5
  */
 public class Playlist {
 
@@ -23,8 +23,9 @@ public class Playlist {
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
-	 * @return
+	 * Divide el total de segundos entre 60. 
+	 * Realiza la operación desde el atributo totalSegundos.
+	 * @return La duración total en segundos de la Playlist.
 	 */
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
@@ -36,13 +37,14 @@ public class Playlist {
 	// referenciar tanto a las clases Cancion y DatosInvalidosException
 	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
-	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
+	 * Método para agregar una canción a la playlist.
+	 * @param nueva La nueva cancion a agregar en la playlist
+	 * @return Devuelve true si la canción ha sido agregada correctamente y false en caso contrario.
+	 * @throws DatosInvalidosException Si la canción o el nombre está vacío lanza una excepción.
+	 * @since 1.0
 	 * @see Cancion
 	 * @see DatosInvalidosException
+	 * 
 	 */
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
@@ -67,11 +69,10 @@ public class Playlist {
 	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
 	//Existe desde la version 1.5
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
-	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
-	 * 
+	 * Método para encontrar una canción introduciendo su nombre y buscándolo en la Playlist.
+	 * @param nombre Titulo de la canción que se desea buscar.
+	 * @return Devuelve true si se ha encontrado la canción y false en caso contrario.
+	 * @since 1.5
 	 */
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
@@ -94,9 +95,11 @@ public class Playlist {
 	// encontrarCancionPorNombre(String nombre)
 	//Existe desde la version 1.0
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * Método que busca una canción por nombre dentro de una Playlist.
+	 * @deprecated No usar, utilizar mejor {@link #encontrarCancionPorNombre(String)}
+	 * @param nombreCancion El título de la canción que se desea buscar.
+	 * @return Devuelve true si se ha encontrado la canción y false en caso contrario.
+	 * @since 1.0
 	 */
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
@@ -114,45 +117,27 @@ public class Playlist {
 
 	
 
-/**
- * @ version 1.0
- * @return
- */
+
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}

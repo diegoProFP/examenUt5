@@ -1,49 +1,43 @@
-package spotify.base;
+package spotify.manuel.jimenez16;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import spotify.exception.DatosInvalidosException;
 
-//Poner comentario de la clase, con la descripción de qué es lo que hace  
-//De autor poned vuestro email de educaMadrid. 
-//La version de la clase es la 1.5
 /**
- * @version 1.0
- * @author alumno
- *
+ * 
+ * @author manuel.jimenez16@educa.madrid.org
+ * @version 1.5
+ * La clase tiene cuatro metodos: {@link #obtenerDuracionTotal()} obtiene la duracion de una canción en minutos, {@link #agregarCancion(Cancion)} nos permite agregar canciones al ArrayList de canciones, {@link #encontrarCancionPorNombre(String)} 
  */
+
 public class Playlist {
 
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
 
-	
-	// Poner descripcion, valor de retorno.
-	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
 	/**
-	 * @version 1.0
-	 * @return
+	 * El método obtiene la duracion total en minutos apartir de los segundos totales entre 60 (60 segundos = 1 minuto).
+	 * @return Devuelve la duración total en minutos.
 	 */
+	
 	public double obtenerDuracionTotal() {
 		return (double) totalSegundos / 60;
 	}
 		
-		
-		
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción. Además que pueda
-	// referenciar tanto a las clases Cancion y DatosInvalidosException
-	//Existe desde la version 1.0
 	/**
-	 * este metodo agregarCancion recoge un objeto de tipo Cancion par que se pueda agregar en el arraylist de canciones
+	 * El método sirve para agregar canciones al Arraylist de canciones. En base a tres condiciones determina si se agrara con exito o no. 
+	 * La primera condición sería que en caso de que canciones sea nulo (null), en caso de cumplirse se creará un ArrayList. 
+	 * La segunda condición se basa en que el parámetro nueva se nulo (null) o que en base a la obtencion del nombre con {@link #getCanciones()}, en caso de cumplirse una o la otra nos devolverá un mensaje. 
+	 * La tercera condición en base al boolean existecancion que obtendra el valor de {@link #encontrarCancionPorNombre(String)}, en caso de que la canción no exista, la variable exito obtendra el valor de {@link #agregarCancion(Cancion)}.
 	 * @param nueva
-	 * @return devuelve un tipo boolean si todo ha salido bien se agrega la cacniopn al arraylist
-	 * @throws DatosInvalidosException 
-	 * @since Version 1.0
-	 * @see Cancion
-	 * @see DatosInvalidosException
+	 * @return Devuelve true o false según el valor de la variable exito.
+	 * @throws DatosInvalidosException
+	 * @since 1.0 
 	 */
+		
 	public boolean agregarCancion(Cancion nueva) throws DatosInvalidosException {
 
 		boolean exito = false;
@@ -62,17 +56,15 @@ public class Playlist {
 		return exito;
 	}
 
-
-	
-	// Poner descripcion, parametros de entrada, valor de retorno, y excepción.
-	//Existe desde la version 1.5
 	/**
-	 * Este metodo encuentra canciones recibiendo un parametro de tipo string y si la ha encontrado devolvera un true 
-	 * en caso contrario indicara que no la he encontrado devolviendo un false
+	 * El método en base al parametro nombre que recibe, con la condición while recorrera el ArrayList hasta que la variable encontrado y el valor de la variable contador sea menor que la longitud del ArrayList.
+	 * Dentro del while se encuentra la condición que si {@link #getNombre()} es igual al nombre de la canción que le pso al método el valor de encontrado será true y será lo que se devolverá.
 	 * @param nombre
-	 * @return devuelve un tipo boolean indicando que ha encontrado la cancion con un true
-	 * 
+	 * @return Devuelve el valor de la variable booleana encontrado.
+	 * @since 1.5
 	 */
+	
+	
 	public boolean encontrarCancionPorNombre(String nombre) {
 		boolean encontrado = false;
 		int contador = 0;
@@ -90,14 +82,15 @@ public class Playlist {
 		return encontrado;
 	}
 	
-	// Este metodo está deprecado porque se ha hecho uno mejor, y el que lo sustituye es el
-	// encontrarCancionPorNombre(String nombre)
-	//Existe desde la version 1.0
 	/**
-	 * @deprecated
-	 * @see encontrarCancionPorNombre(String nombre)
-	 * @since version 1.0
+	 * El método recorre el ArrayList canciones con un for y en caso de que {@link #getNombre()} sea igual al valor de nombre.
+	 * @param nombreCancion
+	 * @return Devuelve el valor de la variable booleana encontrado.
+	 * @deprecated Este método esta dejando de utilizar para ello esta.
+	 * @see #encontrarCancionPorNombre(String)
+	 * @since 1.0
 	 */
+	
 	public boolean encontrarCancion(String nombreCancion) {
 		boolean encontrado = false;
 
@@ -114,45 +107,27 @@ public class Playlist {
 
 	
 
-/**
- * @ version 1.0
- * @return
- */
+
 	public String getNombre() {
 		return nombre;
 	}
-/**
- * @version 1.0
- * @param nombre
- */
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-/**
- * 
- * @return
- */
+
 	public int getTotalSegundos() {
 		return totalSegundos;
 	}
-/**
- * @version 1.0
- * @param totalSegundos
- */
+
 	public void setTotalSegundos(int totalSegundos) {
 		this.totalSegundos = totalSegundos;
 	}
-/**
- * 
- * @return
- */
+
 	public List<Cancion> getCanciones() {
 		return canciones;
 	}
-/**
- * @version 1.0
- * @param canciones
- */
+
 	public void setCanciones(List<Cancion> canciones) {
 		this.canciones = canciones;
 	}
