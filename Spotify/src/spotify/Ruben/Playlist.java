@@ -82,7 +82,7 @@ public class Playlist {
 	 * Este método devuelve una canción buscada 
 	 * @param nombreCancion que se busca
 	 * @since desde la versión 1.0
-	 * @deprecatedNo usar, mejor usar {@link #encontrarCancionPorNombre(String)
+	 * @deprecated No usar, mejor usar {@link #encontrarCancionPorNombre(String)
 	 * @return Canción encontrada
 	 */
 	
