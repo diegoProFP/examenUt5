@@ -18,7 +18,9 @@ public class Playlist {
 	private String nombre;
 	private int totalSegundos;
 	private List<Cancion> canciones;
-
+/*
+ * Comentario
+ */
 	
 	// Poner descripcion, valor de retorno.
 	//En los comentarios describir cómo se obtienen los minutos y a partir de qué dato de la clase.
